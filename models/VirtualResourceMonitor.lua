@@ -21,6 +21,7 @@ local tostring = tostring
 local DRAG_HANDLER = {type = "empty-widget", style = "flib_dialog_footer_drag_handle", name = "drag_handler"}
 local TITLEBAR_FLOW = {type = "flow", style = "flib_titlebar_flow", name = "titlebar"}
 local call = remote.call
+local format = string.format
 local SCROLL_PANE = {
 	type = "scroll-pane",
 	name = "scroll-pane",
@@ -33,17 +34,19 @@ local SCROLL_PANE = {
 
 
 -- TODO: add localization
+---@param number number
+---@return string
 function format_number(number)
-    if number < 1000 then
+    if number < 1e3 then
 		return tostring(number)
-    elseif number < 1000000 then
-		return string.format("%.1fK", number / 1e3)
-    elseif number < 1000000000 then
-		return string.format("%.1fM", number / 1e6)
-    elseif number < 1000000000000 then
-		return string.format("%.1fB", number / 1e9)
+    elseif number < 1e6 then
+		return format("%.1fK", number / 1e3)
+    elseif number < 1e9 then
+		return format("%.1fM", number / 1e6)
+    elseif number < 1e12 then
+		return format("%.1fB", number / 1e9)
     end
-	return string.format("%.1fT", number / 1e12)
+	return format("%.1fT", number / 1e12)
 end
 
 ---@param player LuaPlayer
