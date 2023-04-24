@@ -11,11 +11,11 @@
 </p> -->
 
 <p align="center">
-  <a href="https://github.com/ZwerOxotnik/factorio-VirtualResourceMonitor/tags">
-    <img src="https://img.shields.io/github/tag/ZwerOxotnik/factorio-VirtualResourceMonitor.svg?label=Release&color=FF5500" alt="Release">
+  <a href="https://github.com/ZwerOxotnik/VirtualResourceMonitor/tags">
+    <img src="https://img.shields.io/github/tag/ZwerOxotnik/VirtualResourceMonitor.svg?label=Release&color=FF5500" alt="Release">
   </a>
-  <a href="https://github.com/ZwerOxotnik/factorio-VirtualResourceMonitor/stargazers">
-    <img src="https://img.shields.io/github/stars/ZwerOxotnik/factorio-VirtualResourceMonitor.svg?label=Stars&color=F08125" alt="Star">
+  <a href="https://github.com/ZwerOxotnik/VirtualResourceMonitor/stargazers">
+    <img src="https://img.shields.io/github/stars/ZwerOxotnik/VirtualResourceMonitor.svg?label=Stars&color=F08125" alt="Star">
   </a>
   <a href="https://discord.gg/YyJVUCa">
     <img src="https://discordapp.com/api/guilds/480103519769067542/widget.png?style=shield" alt="Discord">
@@ -24,8 +24,8 @@
     <img src="https://ionicabizau.github.io/badges/patreon.svg" alt="Patreon">
   <a href="https://ko-fi.com/zweroxotnik">
     <img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg" height="20" alt="Buy me a coffee">
-  <a href="http://github.com/ZwerOxotnik/factorio-VirtualResourceMonitor/fork">
-    <img src="https://img.shields.io/github/forks/ZwerOxotnik/factorio-VirtualResourceMonitor.svg?label=Forks&color=7889DD" alt="Fork">
+  <a href="http://github.com/ZwerOxotnik/VirtualResourceMonitor/fork">
+    <img src="https://img.shields.io/github/forks/ZwerOxotnik/VirtualResourceMonitor.svg?label=Forks&color=7889DD" alt="Fork">
   </a>
 </p>
 
@@ -62,7 +62,7 @@ Shows info about virtual resources.
 If you want to download from this source, then use commands below (requires [git][git]).
 
 ```bash
-git clone --recurse-submodules -j8 https://github.com/ZwerOxotnik/factorio-VirtualResourceMonitor
+git clone --recurse-submodules -j8 https://github.com/ZwerOxotnik/VirtualResourceMonitor
 cd VirtualResourceMonitor
 ```
 
