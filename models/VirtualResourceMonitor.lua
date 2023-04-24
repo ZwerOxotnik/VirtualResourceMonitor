@@ -47,13 +47,17 @@ function format_number(number)
 end
 
 ---@param player LuaPlayer
-function clear_player_data(player)
+---@param force LuaForce?
+function clear_player_data(player, force)
 	local player_index = player.index
-	local force_data = force_VRM_elements[player.force.index]
+	force = force or player.force
+	local force_data = force_VRM_elements[force.index]
 	for _, elements in pairs(force_data) do
 		for i = #elements, 1, -1 do
 			local element = elements[i]
-			if not element.valid or element.player_index == player_index then
+			if not element.valid then
+				table.remove(elements, i)
+			elseif element.player_index == player_index then
 				table.remove(elements, i)
 				break
 			end
@@ -156,6 +160,19 @@ local function on_player_joined_game(event)
 	local player = game.get_player(player_index)
 	if not (player and player.valid) then return end
 
+	fill_VRM_table(player)
+end
+
+local function on_player_changed_force(event)
+	local player_index = event.player_index
+
+	local player = game.get_player(player_index)
+	if not (player and player.valid) then return end
+
+	local prev_force = event.force
+	if prev_force.valid then
+		clear_player_data(player, prev_force)
+	end
 	fill_VRM_table(player)
 end
 
@@ -271,6 +288,7 @@ M.events = {
 	[defines.events.on_pre_player_removed] = on_player_left_game,
 	[defines.events.on_player_left_game] = on_player_left_game,
 	[defines.events.on_player_joined_game] = on_player_joined_game,
+	[defines.events.on_player_changed_force] = on_player_changed_force,
 	[defines.events.on_runtime_mod_setting_changed] = on_runtime_mod_setting_changed
 }
 
