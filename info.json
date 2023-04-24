@@ -1,0 +1,23 @@
+{
+	"name": "VirtualResourceMonitor",
+	"version": "1.0.0",
+	"factorio_version": "1.1",
+	"title": "Virtual resources monitor (extension for EasyAPI)",
+	"author": "ZwerOxotnik",
+	"contact": "zweroxotnik@gmail.com, Discord:ZwerOxotnik#7117",
+	"homepage": "https://www.reddit.com/r/ZwerOxotnik/",
+	"description": "See locale/*",
+	"dependencies": [
+		"zk-lib >= 0.10.0",
+		"flib",
+		"base",
+		"? gvv"
+	],
+	"package":
+	{
+		"scripts":
+		{
+			"zip_mod": "./.scripts/zip_mod.sh"
+		}
+	}
+}
